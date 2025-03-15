@@ -1,0 +1,29 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: aurang
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: auction-service
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: auction-service
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  memorySize: 256
+  stage: ${opt:stage, 'dev'}
+
+functions:
+  hello:
+    handler: auction-service/handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
+  hello2:
+    handler: auction-service/handler.hello2
+    events:
+      - httpApi:
+          path: /hello2
+          method: get

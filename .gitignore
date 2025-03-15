@@ -115,6 +115,7 @@ dist
 
 # Serverless directories
 .serverless/
+*.serverless/
 
 # FuseBox cache
 .fusebox/
