@@ -2,6 +2,7 @@
   "name": "auction-service",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,5 +11,9 @@
   "description": "",
   "devDependencies": {
     "serverless-offline": "^14.4.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1692.0",
+    "uuid": "^11.1.0"
   }
 }
