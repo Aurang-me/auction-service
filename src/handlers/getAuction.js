@@ -17,6 +17,11 @@ export const getAuctionById = async (id) => {
         console.error(error);
         throw new createError.InternalServerError(error);
     }
+
+    if (!auction) {
+        throw new createError.NotFound(`Auction with ID ${id} not found`);
+    }
+
     return auction;
 
 };
