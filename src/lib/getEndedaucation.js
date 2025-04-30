@@ -9,7 +9,7 @@ export async function getEndedAuctions() {
         IndexName: 'statusAndEndDate',
         KeyConditionExpression: '#status = :status AND endingAt <= :now',
         ExpressionAttributeValues: {
-            ':status': 'open',
+            ':status': 'OPEN',
             ':now': now.toISOString(),
         },
         ExpressionAttributeNames: {
@@ -19,4 +19,4 @@ export async function getEndedAuctions() {
 
     const result = await dynamodb.query(params).promise();
     return result.Items;
-}
+}   
